@@ -19,7 +19,7 @@ namespace HTTP5101_Assignment_2.Controllers
 
         public string Menu(int burger, int drink, int side, int dessert)
         {
-            string message = "Invalid Message";
+            /*string message = "Invalid Message";*/ // variable used to declare invalid input
 
             if (burger == 1) //burger choices
             {
@@ -39,11 +39,12 @@ namespace HTTP5101_Assignment_2.Controllers
             }
             else
             {
-                var error_msg = message;   
-                if( burger <= 0 || burger > 4)// tried to get the api to return an invalid message with this, but i don't think it work.
+                burger = 0;
+                /*var error_msg = message;   
+                if( burger < 1 || burger > 4)// tried to get the api to return an invalid message with this, but i don't think it work.
                 {                             // Pls how i do i achieve this?
                     error_msg = message ;
-                }
+                }*/
             }
             if (drink == 1) //drink choices
             {
@@ -63,11 +64,12 @@ namespace HTTP5101_Assignment_2.Controllers
             }
             else
             {
-                var error_msg = message;
-                if (drink <= 0 || drink > 4)// tried to get the api to return an invalid message with this, but i don't think it work.
+                drink = 0;
+                /*var error_msg = message;
+                if (drink < 1 || drink > 4)// tried to get the api to return an invalid message with this, but i don't think it work.
                 {
                     error_msg = message;// Pls how i do i achieve this?
-                }
+                }*/
             }
             if (side == 1) //side order choices
             {
@@ -87,11 +89,12 @@ namespace HTTP5101_Assignment_2.Controllers
             }
             else
             {
-                var error_msg = message;
-                if (side <= 0 || side > 4) // tried to get the api to return an invalid message with this, but i don't think it work.
+                side = 0;
+               /* var error_msg = message;
+                if (side < 1 || side > 4) // tried to get the api to return an invalid message with this, but i don't think it work.
                 {                          // Pls how i do i achieve this?
                     error_msg = message;
-                }
+                }*/
             }
             if (dessert == 1) //dessert choices
             {
@@ -111,15 +114,16 @@ namespace HTTP5101_Assignment_2.Controllers
             }
             else
             {
-                var error_msg = message;
-                if (dessert <= 0 || dessert > 4) // tried to get the api to return an invalid message with this, but i don't think it work.
+                dessert = 0;
+                /*var error_msg = message;
+                if (dessert < 1 || dessert > 4) // tried to get the api to return an invalid message with this, but i don't think it work.
                 {                                // Pls how i do i achieve this?
                     error_msg = message;
-                }
+                }*/
             }
           
             var total = burger + drink + side + dessert;
-            return ("Your total calorie count is " + total.ToString());
+            return ("Your total calorie count is " + total);
             
         }
       
