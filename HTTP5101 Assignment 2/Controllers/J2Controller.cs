@@ -7,39 +7,36 @@ using System.Web.Http;
 
 namespace HTTP5101_Assignment_2.Controllers
 {
-  
-       public class J2Controller : ApiController // Hi Christine i am abit overwhelmed please give me until 3rd of march to push my updated code.
+
+    public class J2Controller : ApiController
+    ///<summary>
+    ///Get a loop to run all the sides of the first die.
+    ///After running the first number from the first die, let it be a constant to run the all the condition for the second die in a loop.
+    ///then store the combination of the first loop constant and all the conditions from the second loop that is equal to 10.
+    ///store the numbers of times i + j ==10 condition is met with the sum variable.
+    ///repeat this until all the conditions from the first loop has been compared with all the conditions from the second loop.
+    ///Return sum to get the number of time m + n = 10
+    ///...example http://localhost:56021/api/J2/DiceGame/6/8 = 5.
+    ///</summary>
     {
         [HttpGet]
-        //[Route("api/J2/DiceGame/{m}/{n}")]
-        [Route("api/J2/DiceGame/{m}")]  //using this to test. 
-        public string DiceGame (int m /*, int n*/)
+        [Route("api/J2/DiceGame/{m}/{n}")]
+        public string DiceGame(int m, int n) 
         {
-            /*for (int n_dice = 0; n_dice < n - 1; n_dice++)
-             {
-                 int first_dice = n_dice;
-                 for (int m_dice = first_dice + 1; m_dice < m; m_dice++)
-                 {
-                     int second_dice = m;
-                     if (first_dice + second_dice == 10)
-                     {
-                         return {first_dice, second_dice};
-                 }
-             }*/
-            int start = 1;
-            string message = "";
-            int counter = start;
-            
+            var NoOfWays = 0;
 
-            while (counter <= m )
+            for (int i = 1; i <= m; i++)
             {
-                message = message + counter;
-                counter = counter + 1;
+                for (int j = 1; j <= n; j++)
+                {
+                    if (i + j == 10)
+                    {
+                        NoOfWays = NoOfWays++;
+                    }
+                }
             }
-            return message;
-            // return ("I want to see where " + m + n + "lead");
 
-
+            return NoOfWays.ToString();
         }
     }
 }

@@ -90,20 +90,20 @@ namespace HTTP5101_Assignment_2.Controllers
             else
             {
                 side = 0;
-               /* var error_msg = message;
-                if (side < 1 || side > 4) // tried to get the api to return an invalid message with this, but i don't think it work.
-                {                          // Pls how i do i achieve this?
-                    error_msg = message;
-                }*/
+                /* var error_msg = message;
+                 if (side < 1 || side > 4) // tried to get the api to return an invalid message with this, but i don't think it work.
+                 {                          // Pls how i do i achieve this?
+                     error_msg = message;
+                 }*/
             }
             if (dessert == 1) //dessert choices
             {
                 dessert = 167; //Apple Pie
-            }                   
+            }
             else if (dessert == 2) //dessert choices
             {
                 dessert = 266; //Sundae
-            }                        
+            }
             else if (dessert == 3) //dessert choices
             {
                 dessert = 75; //Fruit Cup
@@ -121,12 +121,12 @@ namespace HTTP5101_Assignment_2.Controllers
                     error_msg = message;
                 }*/
             }
-          
+
             var total = burger + drink + side + dessert;
             return ("Your total calorie count is " + total);
-            
+
         }
-      
+
 
     }
 }
