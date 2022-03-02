@@ -31,12 +31,12 @@ namespace HTTP5101_Assignment_2.Controllers
                 {
                     if (i + j == 10)
                     {
-                        NoOfWays = NoOfWays++;
+                        NoOfWays = NoOfWays++; // this will happen when m + n == 10
                     }
                 }
             }
 
-            return NoOfWays.ToString();
+            return NoOfWays.ToString(); // this will oouput the number of times m + n == 10
         }
     }
 }
